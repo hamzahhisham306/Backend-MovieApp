@@ -7,7 +7,7 @@ const cors = require('cors');
 
 const app = express();
 app.use(cors());
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4001
 const movie=require('./modules/movie');
 
 
