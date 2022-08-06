@@ -1,8 +1,9 @@
 const axios=require('axios');
 
+const keymovie=process.env.KEY_MOVIE
 async function movie(req, res){
     const searchQuery=req.query.searchQuery;
-    const moviesArr=await axios.get(`https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=${searchQuery}`);
+    const moviesArr=await axios.get(`https://api.themoviedb.org/3/search/movie?&api_key=${keymovie}&query=${searchQuery}`);
 
     try{
         const arrayOfmovies=moviesArr.data.results.map((movie)=>new Movie(movie));
